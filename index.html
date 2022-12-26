@@ -45,6 +45,11 @@
           <li><a href="#">Kamino</a></li>
         </ul>
       </section>
+<section id="movie-details">
+    <h2></h2>
+    <p></p>
+  </section>
+  
       </main>
       <footer>
         <p>Copyright 2022 Star Wars Universe</p>
@@ -64,6 +69,35 @@ fetch('https://swapi.dev/api/films/')
       filmsList.appendChild(listItem);
     });
   });
+  const charactersList = document.querySelector('#characters ul');
+
+fetch('https://swapi.dev/api/people/')
+  .then(response => response.json())
+  .then(data => {
+    data.results.forEach(character => {
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = '#';
+      link.textContent = character.name;
+      listItem.appendChild(link);
+      charactersList.appendChild(listItem);
+    });
+  });
+  const planetsList = document.querySelector('#planets ul');
+
+fetch('https://swapi.dev/api/planets/')
+  .then(response => response.json())
+  .then(data => {
+    data.results.forEach(planet => {
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = '#';
+      link.textContent = planet.name;
+      listItem.appendChild(link);
+      planetsList.appendChild(listItem);
+    });
+  });
+ 
 
       </script>
       </body>
