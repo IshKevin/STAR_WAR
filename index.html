@@ -34,13 +34,6 @@
         <li><img src="han-solo.jpg" alt="Han Solo">Han Solo</li>
       </ul>
     </section>
-    <section id="planets">
-      <h2>Planets</h2>
-      <ul>
-        <li><a href="#">Tatooine</a></li>
-        <li><a href="#">Hoth</a></li>
-        <li><a href="#">Endor</a></li>
-      </ul>
       <section id="planets">
         <h2>Planets</h2>
         <ul>
@@ -56,6 +49,23 @@
       <footer>
         <p>Copyright 2022 Star Wars Universe</p>
       </footer>
+      <script>
+        const filmsList = document.querySelector('#films ul');
+
+fetch('https://swapi.dev/api/films/')
+  .then(response => response.json())
+  .then(data => {
+    data.results.forEach(film => {
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = '#';
+      link.textContent = film.title;
+      listItem.appendChild(link);
+      filmsList.appendChild(listItem);
+    });
+  });
+
+      </script>
       </body>
       </html>
       
