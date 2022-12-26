@@ -22,9 +22,9 @@
     <section id="films">
       <h2>Films</h2>
       <ul>
-        <li><a href="#">Star Wars: Episode IV - A New Hope</a></li>
+        <!-- <li><a href="#">Star Wars: Episode IV - A New Hope</a></li>
         <li><a href="#">Star Wars: Episode V - The Empire Strikes Back</a></li>
-        <li><a href="#">Star Wars: Episode VI - Return of the Jedi</a></li>
+        <li><a href="#">Star Wars: Episode VI - Return of the Jedi</a></li> -->
       </ul>
     </section>
     <section id="characters">
@@ -51,6 +51,24 @@
       <footer>
         <p>Copyright 2022 Star Wars Universe</p>
       </footer>
+      <!-- <script>
+        const filmsList = document.querySelector('#films ul');
+
+fetch('https://swapi.dev/api/films/')
+  .then(response => response.json())
+  .then(data => {
+    data.results.forEach(film => {
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = '#';
+      link.textContent = film.title;
+      listItem.appendChild(link);
+      filmsList.appendChild(listItem);
+    }
+    );
+  }
+  );
+      </script> -->
       </body>
       </html>
       
