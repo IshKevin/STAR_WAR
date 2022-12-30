@@ -1,9 +1,3 @@
-// app.js
-
-// app.js
-
-// app.js
-
 async function getCharacters() {
   let characters = []; // Create an empty array to store the characters
   let nextUrl = 'https://swapi.dev/api/people'; // Set the URL for the first page of results
@@ -15,21 +9,15 @@ async function getCharacters() {
     characters = characters.concat(data.results);
     // Set the URL for the next page of results, or null if there are no more pages
     nextUrl = data.next ? data.next : null;
-  } 
-  // app.js (continued)
-
-// ...
+  }
+  // Build an HTML string for the list of characters
+  let html = '<ul>';
+  characters.forEach(character => {
+    html += `<li>${character.name}</li>`;
+  });
+  html += '</ul>';
+  // Insert the HTML string into the div element
+  document.getElementById('text').innerHTML = html;
 }
-// Build an HTML string for the list of characters
-let html = '<ul>';
-characters.forEach(character => {
-  html += `<li>${character.name}</li>`;
-});
-html += '</ul>';
-// Insert the HTML string into the div element
-document.getElementById('text').innerHTML = html;
-
 
 getCharacters(); // Call the function to retrieve all characters
-
-
