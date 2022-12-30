@@ -5,49 +5,19 @@
 <head>
   <meta charset="utf-8">
   <title>SWAPI Example</title>
-  <style>
-    /* Style for the modal */
-    .modal {
-      display: none; /* Hide the modal by default */
-      position: fixed; /* Position the modal in the center of the screen */
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      height: 80%;
-      overflow: auto;
-      background-color: white;
-      border: 1px solid black;
-      padding: 20px;
-    }
-
-    /* Style for the modal content */
-    .modal-content {
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Style for the modal close button */
-    .modal-close {
-      position: absolute;
-      right: 0;
-      top: 0;
-      font-size: 28px;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="style" href="style.css">
+    
 </head>
 <body>
   <div id="characters"></div>
-  <!-- Modal element to display character details -->
-  <div id="modal" class="modal">
-    <!-- Close button -->
-    <span class="modal-close">&times;</span>
-    <!-- Modal content -->
-    <div id="modal-content" class="modal-content">
-      <!-- Character name -->
-      <h1 id="modal-character-name"></h1>
-      <!-- Character details -->
+
+<div id="modal">
+  <div id="modal-content">
+    <div id="modal-header">
+      <span id="modal-close">&times;</span>
+      <h2 id="modal-character-name"></h2>
+    </div>
+    <div id="modal-body">
       <p id="modal-character-height"></p>
       <p id="modal-character-mass"></p>
       <p id="modal-character-hair-color"></p>
@@ -57,6 +27,8 @@
       <p id="modal-character-gender"></p>
     </div>
   </div>
-  <script src="app.js"></script>
+</div>
+
+  <script src="script.js"></script>
 </body>
 </html>
