@@ -1,0 +1,29 @@
+/* Style for the modal */
+.modal {
+  display: none; /* Hide the modal by default */
+  position: fixed; /* Position the modal in the center of the screen */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  overflow: auto;
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+/* Style for the modal content */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for the modal close button */
+.modal-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 28px;
+  cursor: pointer;
+}
