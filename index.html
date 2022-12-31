@@ -1,10 +1,10 @@
 <html>
 <head>
-  <title>Star Wars Characters</title>
+  <title>Star Wars</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Star Wars Characters</h1>
+  <h1 id="title">Star Wars </h1>
   <div id="character-container"></div>
   <script>
     // Function to retrieve and display all characters from the SWAPI API
@@ -29,9 +29,7 @@
               <p>Hair Color: ${character.hair_color}</p>
               <p>Eye Color: ${character.eye_color}</p>
               <p>Skin Color: ${character.skin_color}</p>
-              <p>Home World: ${character.homeworld}</p>
-              <p>Species: ${character.species.join(', ')}</p>
-              <p>Vehicles: ${character.vehicles.join(', ')}</p>
+              
              
             `;
             // Append the character element to the container
