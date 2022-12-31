@@ -8,12 +8,16 @@ body{
 #title{
   text-align: center;
 }
+#chartilte{
+  font-size: 18px;
+  background-color: rgb(4, 102, 148);
+}
 
 #character-container {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin: 0 20px;
 }
 
 .character-card {
@@ -51,4 +55,17 @@ body{
 /* Style the character details */
 .character-card .character-details {
   padding: 10px;
+}
+
+@media (max-width: 800px) {
+  #character-container {
+    display: grid;
+   
+  }
+}
+
+@media (max-width: 500px) {
+  #character-container{
+    display: grid;
+  }
 }
