@@ -1,34 +1,32 @@
-<!-- index.html -->
-
-<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>SWAPI Example</title>
-  <link rel="style" href="style.css">
-    
+  <title>Star Wars Characters</title>
 </head>
 <body>
-  <div id="characters"></div>
-
-<div id="modal">
-  <div id="modal-content">
-    <div id="modal-header">
-      <span id="modal-close">&times;</span>
-      <h2 id="modal-character-name"></h2>
-    </div>
-    <div id="modal-body">
-      <p id="modal-character-height"></p>
-      <p id="modal-character-mass"></p>
-      <p id="modal-character-hair-color"></p>
-      <p id="modal-character-skin-color"></p>
-      <p id="modal-character-eye-color"></p>
-      <p id="modal-character-birth-year"></p>
-      <p id="modal-character-gender"></p>
-    </div>
-  </div>
-</div>
-
-  <script src="script.js"></script>
+  <h1>Star Wars Characters</h1>
+  <div id="character-container"></div>
+  <script>
+    // Make a request to the SWAPI API to retrieve the list of characters
+    fetch('https://swapi.dev/api/people/')
+      .then(response => response.json())
+      .then(data => {
+        // Parse the JSON data and use it to create HTML elements for each character
+        const characterContainer = document.getElementById('character-container');
+        for (const character of data.results) {
+          // Create a new HTML element for the character
+          const characterElement = document.createElement('div');
+          // Set the character's name and other information as the element's text content
+          characterElement.innerHTML = `
+            <h2>${character.name}</h2>
+            <p>Age: ${character.age}</p>
+            <p>Height: ${character.height}</p>
+            <p>Mass: ${character.mass}</p>
+            <p>Birth Year: ${character.birth_year}</p>
+          `;
+          // Append the character element to the container
+          characterContainer.appendChild(characterElement);
+        }
+      });
+  </script>
 </body>
 </html>
